@@ -78,8 +78,10 @@ def add_to_cart(melon_id):
     # - check if the desired melon id is the cart, and if not, put it in
     # - increment the count for that melon id by 1
     cart[melon_id] = cart.get(melon_id, 0) + 1
-    
+
     # - flash a success message
+    flash("Success! Melon added to cart.")
+    
     # - redirect the user to the cart page
 
     return "Oops! This needs to be implemented!"
