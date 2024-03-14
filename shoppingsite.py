@@ -78,6 +78,8 @@ def add_to_cart(melon_id):
     # - check if the desired melon id is the cart, and if not, put it in
     # - increment the count for that melon id by 1
     cart[melon_id] = cart.get(melon_id, 0) + 1
+    
+    # print("cart: ", cart)
 
     # - flash a success message
     flash("Success! Melon added to cart.")
@@ -96,8 +98,13 @@ def show_shopping_cart():
     # The logic here will be something like:
     #
     # - get the cart dictionary from the session
+    cart = session.get("cart", {})
+    
     # - create a list to hold melon objects and a variable to hold the total
     #   cost of the order
+    total_cost = 0
+    melons_in_cart = []
+
     # - loop over the cart dictionary, and for each melon id:
     #    - get the corresponding Melon object
     #    - compute the total cost for that type of melon
