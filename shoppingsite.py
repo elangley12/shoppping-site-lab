@@ -81,10 +81,10 @@ def add_to_cart(melon_id):
 
     # - flash a success message
     flash("Success! Melon added to cart.")
-    
+
     # - redirect the user to the cart page
 
-    return "Oops! This needs to be implemented!"
+    return redirect("/cart")
 
 
 @app.route("/cart")
